@@ -1,0 +1,19 @@
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{makecell}
+
+% fancyhdrの初期設定
+\pagestyle{fancy}
+\fancyhf{}  % ヘッダー・フッターをいったん空に
+
+% ヘッダー：左上にセクション名（小文字のまま）
+% \fancyhead[L]{\nouppercase{\leftmark}}
+
+% ↓ 代わりに空にしておく
+\fancyhead[L]{}
+
+
+
+% フッター：中央にページ番号
+\fancyfoot[C]{\thepage}
+

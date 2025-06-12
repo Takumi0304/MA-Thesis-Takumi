@@ -1,0 +1,65 @@
+% 段落インデントと段落間の空白をAPA仕様に設定
+\usepackage{indentfirst} 
+\setlength{\parindent}{1.27cm} 
+\setlength{\parskip}{0pt}      
+
+% パッケージ
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{linguex}
+\PassOptionsToPackage{table}{xcolor}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+
+% セクションタイトルのフォーマット（APA第7版に準拠）
+
+% Level 1: Section (Flush left, Bold, Large)
+\titleformat{\section}[block]
+  {\normalfont\bfseries\fontsize{26}{28}\selectfont}
+  {\thesection}{1em}{}
+
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+% Level 2: Subsection (Flush left, Bold)
+\titleformat{\subsection}[block]
+  {\normalfont\bfseries\fontsize{18}{22}\selectfont}
+  {\thesubsection}{1em}{}
+
+\titlespacing*{\subsection}{0pt}{3.0ex plus 1ex minus .2ex}{2.0ex plus .2ex}
+
+% Level 3: Subsubsection (Flush left, Bold Italic)
+\titleformat{\subsubsection}[block]
+  {\normalfont\bfseries\itshape\fontsize{14}{16}\selectfont}
+  {\thesubsubsection}{1em}{}
+
+\titlespacing*{\subsubsection}{0pt}{2.5ex plus 1ex minus .2ex}{2.0ex plus .2ex}
+
+% Level 4: Paragraph (Indented, Bold, run-in heading, ends with period)
+\titleformat{\paragraph}[runin]
+  {\normalfont\bfseries\normalsize}
+  {\theparagraph}{1em}{}
+  
+\titlespacing*{\paragraph}{1.27cm}{3.0ex plus 1ex minus .2ex}{1em}
+
+% Level 5: Subparagraph (Indented, Bold Italic, run-in heading, ends with period)
+\titleformat{\subparagraph}[runin]
+  {\normalfont\bfseries\itshape\normalsize}
+  {\thesubparagraph}{1em}{}
+
+\titlespacing*{\subparagraph}{1.27cm}{3.0ex plus 1ex minus .2ex}{1em}
+
+% 標準文字サイズ設定（必要なら）
+\renewcommand{\normalsize}{\fontsize{12}{16.5}\selectfont}
+
+% fancyhdr設定
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}  
+\fancyhead[L]{\nouppercase{\leftmark}}  
+\fancyfoot[C]{\thepage} 
+
+% セクションタイトルを leftmark に反映させる設定
+\makeatletter
+\renewcommand{\sectionmark}[1]{\markboth{\thesection\ #1}{}}
+\makeatother
